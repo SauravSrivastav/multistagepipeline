@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: multistagepipeline 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: multistagepipeline 
+    spec:
+      containers:
+        - name: multistagepipeline 
+          image: mymicroserviceregistry.azurecr.io/multistagepipeline
+          ports:
+          - containerPort: 80
